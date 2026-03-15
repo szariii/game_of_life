@@ -22,18 +22,20 @@ void startBoard(vector<vector<int>>& mainArr, int n);
 void updateBoard(vector<vector<int>>& mainArr, vector<vector<int>>& tempArr);
 
 int main() {
+	// K: nie rozumiem tej gry ale chyba jest okej :D
 	// główny wektor który jest wyznacznikiem aktualnej tury
 	vector<vector<int>> mainBoard = {};
 	//pomocniczy wektor aby móc na nim obliczać następne miejsce - jezeli nie bedziesz jej uzywal to usun ja
 	vector<vector<int>> tempBoard = {};
 	generateBoard(mainBoard, tempBoard, 10, 10);
 	srand(time(NULL));								//dla rand() w startBoard()
-	//startBoard(mainBoard, 5);						//działa, ale mało ciekawe
+	startBoard(mainBoard, 5);						//działa, ale mało ciekawe
 	/*
 	mainBoard[5][4] = 1;							//oscylator - robi brrr				
 	mainBoard[5][5] = 1;
 	mainBoard[5][6] = 1;
 	*/
+
 	mainBoard[1][2] = 1;							//glider - robi siuu :DDD
 	mainBoard[2][3] = 1;
 	mainBoard[3][1] = 1;

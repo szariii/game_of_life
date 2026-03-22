@@ -22,8 +22,7 @@ void startBoard(vector<vector<int>>& mainArr, int n);
 void updateBoard(vector<vector<int>>& mainArr, vector<vector<int>>& tempArr);
 
 int main() {
-	// K: nie rozumiem tej gry ale chyba jest okej :D
-	// główny wektor który jest wyznacznikiem aktualnej tury
+	//to do: przerobic na objected oriented
 	vector<vector<int>> mainBoard = {};
 	//pomocniczy wektor aby móc na nim obliczać następne miejsce - jezeli nie bedziesz jej uzywal to usun ja
 	vector<vector<int>> tempBoard = {};

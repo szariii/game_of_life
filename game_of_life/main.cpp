@@ -1,6 +1,10 @@
+
 #include <iostream>
-#include <vector>
+#include <string>
 #include <ctime>
+#include "Point.h"
+#include "Cell.h"
+#include "Game.h"
 
 using namespace std;
 
@@ -20,103 +24,6 @@ Znalazłem takie zasady ale możesz dodać jakieś inne tylko napisz tutaj:
 //void printBoard(vector<vector<int>>& board);
 //void startBoard(vector<vector<int>>& mainArr, int n);
 //void updateBoard(vector<vector<int>>& mainArr, vector<vector<int>>& tempArr);
-
-class Point {
-private:
-	int col;
-	int row;
-public:
-	Point(int col, int row) {
-		this->col = col;
-		this->row = row;
-	}
-
-	int getCol() {
-		return this->col;
-	}
-
-	int getRow() {
-		return this->row;
-	}
-
-	void setCol(int col) {
-		this->col = col;
-	}
-
-	void setRow(int row) {
-		this->row = row;
-	}
-};
-
-class Cell{
-private:
-	int position;
-public:
-
-	Cell(int position){
-		this->position = position;
-	}
-
-	int getPosition() {
-		return position;
-	}
-
-	void setPosition(int position) {
-		this->position = position;
-	}
-};
-
-
-class Game {
-private:
-	vector<int> mainBoard = {}; // uzywamy tabeli jednopoziomowej aby miec wieksze mozliwosci
-	vector <Cell> cells = {};
-	int cols;
-	int rows;
-
-	int countCellPosition(int colIndex, int rowindex) {
-		return (colIndex * this->rows) + rowindex;
-	}
-	
-	void generateBoard() {
-		for (int i = 0; i < this->cols; i++) {
-			for (int j = 0; j < this->rows; j++) {
-				mainBoard.push_back(0);
-			}
-		}
-	}
-
-	void setStartingPoints(vector <Point> &points){
-		for (int i = 0; i < points.size(); i++) {
-			mainBoard.at(countCellPosition(points[i].getCol(), points[i].getRow())) = 1;
-			cells.push_back(countCellPosition(points[i].getCol(), points[i].getRow()));
-		}
-	}
-
-public:
-	Game(int cols, int rows, vector <Point> &points ) {
-		this->cols = cols;
-		this->rows = rows;
-		generateBoard();
-		setStartingPoints(points);
-	}
-
-	void nextRound() {
-		// to do Kuba: dodaj logikę poruszania sie komorek (nie zapomnij o dodawaniu i usuwaniu komórek do vectora cells oraz jak bedziesz sprawdzal na poczatku rundy które komórki jakie ruchy robia to iteruj po arreyu cells a nie całej planszy [potrzebne pola obliczaj sobie za pomoca funkcji setStartingPoints])
-	
-	}
-
-	void printBoard() {
-		cout << "\n";
-		for (int i = 0; i < mainBoard.size(); i++) {
-			if (i % this->rows==0) {
-				cout << "\n";
-			}
-			cout << " " << mainBoard.at(i);
-		}
-	}
-
-};
 
 
 int main() {

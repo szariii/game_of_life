@@ -54,7 +54,7 @@ int Board::countAliveNeighbors(int colIndex, int rowIndex) {
 		}
 	}
   return aliveNeighbors;
-}
+} // dodac Rule zamiast funkcji coutnCellPosition (wiêcej info na mes)
 
 bool Board::isAlive(int colIndex, int rowIndex) {
 	int pos = countCellPosition(colIndex, rowIndex);

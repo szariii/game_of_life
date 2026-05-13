@@ -3,7 +3,6 @@
 #include <string>
 #include <ctime>
 #include "Point.h"
-#include "Cell.h"
 #include "Game.h"
 
 using namespace std;

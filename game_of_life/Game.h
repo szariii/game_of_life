@@ -1,13 +1,14 @@
 #pragma once
 #include <vector>
-#include "Cell.h"
 #include "Point.h"
 #include "Board.h"
+#include "Rule.h"
 
 class Game
 {
 	private:
 		Board b;
+		Rule r;
 
 		int countCellPosition(int colIndex, int rowindex);
 		void generateBoard();

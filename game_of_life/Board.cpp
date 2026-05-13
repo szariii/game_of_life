@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include "Board.h"
 
 
@@ -26,7 +25,6 @@ void Board::generateBoard() {
 void Board::setStartingPoints(std::vector<Point>& points) {
 	for (size_t i = 0; i < points.size(); i++) {
 		mainBoard.at(countCellPosition(points[i].getCol(), points[i].getRow())) = 1;
-		cells.push_back(countCellPosition(points[i].getCol(), points[i].getRow()));
 	}
 }
 
@@ -39,22 +37,7 @@ void Board::printBoard() {
 		std::cout << " " << mainBoard.at(i);
 	}
 }
-
-int Board::countAliveNeighbors(int colIndex, int rowIndex) {
-    int aliveNeighbors = 0;
-	for (int dc = -1; dc <= 1; ++dc) {
-		for (int dr = -1; dr <= 1; ++dr) {
-			if (dc == 0 && dr == 0) continue; //pomijamy nasza komorke
-			int c = colIndex + dc;
-			int r = rowIndex + dr;
-			if (c < 0 || c >= this->cols || r < 0 || r >= this->rows) continue;
-			if (mainBoard[countCellPosition(c, r)] == 1) {
-				++aliveNeighbors;
-			}
-		}
-	}
-  return aliveNeighbors;
-} // dodac Rule zamiast funkcji coutnCellPosition (wiêcej info na mes)
+ // dodac Rule zamiast funkcji coutnCellPosition (wiêcej info na mes)
 
 bool Board::isAlive(int colIndex, int rowIndex) {
 	int pos = countCellPosition(colIndex, rowIndex);

@@ -1,11 +1,14 @@
 #pragma once
 #include "board.h"
 #include "Point.h"
+#include "RuleAbstract.h"
 #include <vector>
 
 
-class Rule {
+class Rule: public RuleAbstract {
 	public:
-		int countAliveNeighbours(Board& board, int colIndex, int rowIndex);
-		std::vector<int> calculateNextState(Board& board);
+		int countAliveNeighbours(Board& board, int colIndex, int rowIndex) override;
+		std::vector<int> calculateNextState(Board& board) override;
+		int countCellPosition(Board& board, int colIndex, int rowindex) override; //przeniesc
+		bool isAlive(Board& board, int colIndex, int rowIndex) override;
 };

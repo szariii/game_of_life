@@ -131,13 +131,14 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Point.cpp" />
-	<ClCompile Include="Rule.cpp" />
+    <ClCompile Include="Rule.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Point.h" />
-	<ClInclude Include="Rule.h" />
+    <ClInclude Include="Rule.h" />
+    <ClInclude Include="RuleAbstract.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

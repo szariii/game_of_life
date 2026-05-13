@@ -2,14 +2,11 @@
 #include "Board.h"
 
 
-Board::Board(int cols, int rows, std::vector<Point>& points) : cols(cols), rows(rows) {
+Board::Board(int cols, int rows, std::vector<Point>& points, RuleAbstract* rule) : cols(cols), rows(rows), rule(rule) {
     generateBoard();
 	setStartingPoints(points);
 }
 
-int Board::countCellPosition(int colIndex, int rowindex) {
-	return (rowindex * this->cols) + colIndex;
-}
 
 void Board::generateBoard() {
     // fill in row-major order: rows outer, cols inner
@@ -24,7 +21,7 @@ void Board::generateBoard() {
 
 void Board::setStartingPoints(std::vector<Point>& points) {
 	for (size_t i = 0; i < points.size(); i++) {
-		mainBoard.at(countCellPosition(points[i].getCol(), points[i].getRow())) = 1;
+		mainBoard.at(rule->countCellPosition(*this,points[i].getCol(), points[i].getRow())) = 1;
 	}
 }
 
@@ -39,10 +36,6 @@ void Board::printBoard() {
 }
  // dodac Rule zamiast funkcji coutnCellPosition (wiêcej info na mes)
 
-bool Board::isAlive(int colIndex, int rowIndex) {
-	int pos = countCellPosition(colIndex, rowIndex);
-	return mainBoard[pos];
-}
 
 void Board::setState(std::vector<int> tempBoard) {
 	mainBoard = tempBoard;

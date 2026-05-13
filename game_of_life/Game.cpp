@@ -3,7 +3,7 @@
 
 
 
-Game::Game(int cols, int rows, std::vector<Point>& points) : b(cols, rows, points) {
+Game::Game(int cols, int rows, std::vector<Point>& points, RuleAbstract* rule) : b(cols, rows, points, rule) {
 	// zainicjalizuj w konstruktorze
 }
 

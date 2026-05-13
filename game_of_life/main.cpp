@@ -27,7 +27,8 @@ Znalazłem takie zasady ale możesz dodać jakieś inne tylko napisz tutaj:
 
 int main() {
 	vector<Point> startingPoints = { {1,2}, {2,3}, {3,1}, {3,2}, {3,3} };
-	Game game = Game(10, 10, startingPoints);
+	Rule rule = Rule();
+	Game game = Game(10, 10, startingPoints, &rule);
 	//vector<vector<int>> mainBoard = {};
 	//pomocniczy wektor aby móc na nim obliczać następne miejsce - jezeli nie bedziesz jej uzywal to usun ja
 	//vector<vector<int>> tempBoard = {};

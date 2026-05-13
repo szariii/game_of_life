@@ -15,7 +15,7 @@ class Game
 		void setStartingPoints(std::vector<Point>& points);
 
 	public:
-		Game(int cols, int rows, std::vector<Point>& points);
+		Game(int cols, int rows, std::vector<Point>& points, RuleAbstract* rule);
 		void nextRound();
 		void printBoard();
 		

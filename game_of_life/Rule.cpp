@@ -9,7 +9,7 @@ int Rule::countAliveNeighbours(Board& board, int colIndex, int rowIndex) {
 			int c = colIndex + dc;
 			int r = rowIndex + dr;
 			if (c < 0 || c >= board.getCols() || r < 0 || r >= board.getRows()) continue;
-			if (board.isAlive(c, r)) {
+			if (isAlive(board,c, r)) {
 				++aliveNeighbors;
 			}
 		}
@@ -27,7 +27,7 @@ std::vector<int> Rule::calculateNextState(Board& board) {
 		for (int r = 0; r < rows; ++r) {
 			int aliveNeighbours = countAliveNeighbours(board, c, r);
 			int idx = (r * cols) + c;
-			if (board.isAlive(c, r)) {
+			if (isAlive(board, c, r)) {
 				if (aliveNeighbours == 2 || aliveNeighbours == 3) {
 					tempBoard[idx] = 1;
 				}
@@ -40,4 +40,13 @@ std::vector<int> Rule::calculateNextState(Board& board) {
 		}
 	}
 	return tempBoard;
+}
+
+int Rule::countCellPosition(Board& board, int colIndex, int rowindex) {
+	return (rowindex * board.getCols()) + colIndex;
+}
+
+bool Rule::isAlive(Board& board, int colIndex, int rowIndex) {
+	int pos = countCellPosition(board, colIndex, rowIndex);
+	return board.getBoard()[pos];
 }

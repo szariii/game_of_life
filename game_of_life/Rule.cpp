@@ -8,6 +8,7 @@ int Rule::countAliveNeighbours(Board& board, int colIndex, int rowIndex) {
 			if (dc == 0 && dr == 0) continue; //pomijamy nasza komorke
 			int c = colIndex + dc;
 			int r = rowIndex + dr;
+			// popraw boundary conditions - abstrakcja
 			if (c < 0 || c >= board.getCols() || r < 0 || r >= board.getRows()) continue;
 			if (isAlive(board,c, r)) {
 				++aliveNeighbors;

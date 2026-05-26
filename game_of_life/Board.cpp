@@ -2,7 +2,7 @@
 #include "Board.h"
 
 
-Board::Board(int cols, int rows, std::vector<Point>& points, RuleAbstract* rule) : cols(cols), rows(rows), rule(rule) {
+Board::Board(int cols, int rows, std::vector<Point>& points, std::shared_ptr<RuleAbstract> rule) : cols(cols), rows(rows), rule(rule) {
     generateBoard();
 	setStartingPoints(points);
 }

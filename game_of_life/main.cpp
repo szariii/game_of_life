@@ -4,6 +4,10 @@
 #include <ctime>
 #include "Point.h"
 #include "Game.h"
+#include "BoundaryStrategy.h"
+#include "TorusBoundary.h"
+#include "HardBoundary.h"
+#include "ReflectiveBoundary.h"
 
 using namespace std;
 
@@ -27,8 +31,11 @@ Znalazłem takie zasady ale możesz dodać jakieś inne tylko napisz tutaj:
 
 int main() {
 	vector<Point> startingPoints = { {1,2}, {2,3}, {3,1}, {3,2}, {3,3} };
-	Rule rule = Rule();
-	Game game = Game(10, 10, startingPoints, &rule);
+	auto boundaryStrategy1 = std::make_shared<HardBoundary>();
+	auto boundaryStrategy2 = std::make_shared<TorusBoundary>();
+	auto boundaryStrategy3 = std::make_shared<ReflectiveBoundary>();
+	std::shared_ptr<Rule> rule = std::make_shared<Rule>(boundaryStrategy3);
+	Game game = Game(20, 20, startingPoints, rule);
 	//vector<vector<int>> mainBoard = {};
 	//pomocniczy wektor aby móc na nim obliczać następne miejsce - jezeli nie bedziesz jej uzywal to usun ja
 	//vector<vector<int>> tempBoard = {};

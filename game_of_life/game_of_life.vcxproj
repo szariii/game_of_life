@@ -131,14 +131,21 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="ReflectiveBoundary.cpp" />
     <ClCompile Include="Rule.cpp" />
+    <ClCompile Include="TorusBoundary.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
+    <ClInclude Include="BoundaryStrategy.h" />
     <ClInclude Include="Game.h" />
+    <ClCompile Include="HardBoundary.cpp" />
+    <ClInclude Include="HardBoundary.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="ReflectiveBoundary.h" />
     <ClInclude Include="Rule.h" />
     <ClInclude Include="RuleAbstract.h" />
+    <ClInclude Include="TorusBoundary.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,13 +3,13 @@
 
 
 
-Game::Game(int cols, int rows, std::vector<Point>& points, RuleAbstract* rule) : b(cols, rows, points, rule) {
-	// zainicjalizuj w konstruktorze
+Game::Game(int cols, int rows, std::vector<Point>& points, std::shared_ptr<RuleAbstract> rule) : b(cols, rows, points, rule), r(rule) {
+	
 }
 
 void Game::nextRound() {
   
-	std::vector<int>nextRoundBoard = r.calculateNextState(this->b);
+	std::vector<int>nextRoundBoard = r->calculateNextState(this->b);
 	b.setState(nextRoundBoard);
 }
 

@@ -10,9 +10,9 @@ private:
 	std::vector<int> mainBoard;
 	int cols;
 	int rows;
-	RuleAbstract* rule;
+	std::shared_ptr<RuleAbstract> rule;
 public:
-	Board(int cols, int rows, std::vector<Point>& points, RuleAbstract* rule);
+	Board(int cols, int rows, std::vector<Point>& points, std::shared_ptr<RuleAbstract> rule);
 	void generateBoard();
 	void setStartingPoints(std::vector<Point>& points);
 	//int countCellPosition(int colIndex, int rowindex);

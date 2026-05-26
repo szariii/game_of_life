@@ -8,14 +8,9 @@ class Game
 {
 	private:
 		Board b;
-		Rule r;
-
-		int countCellPosition(int colIndex, int rowindex);
-		void generateBoard();
-		void setStartingPoints(std::vector<Point>& points);
-
+		std::shared_ptr<RuleAbstract> r;
 	public:
-		Game(int cols, int rows, std::vector<Point>& points, RuleAbstract* rule);
+		Game(int cols, int rows, std::vector<Point>& points, std::shared_ptr<RuleAbstract> rule);
 		void nextRound();
 		void printBoard();
 		

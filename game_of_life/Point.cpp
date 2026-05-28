@@ -1,8 +1,8 @@
 #include "Point.h"
 
 Point::Point(int col, int row) {
-    this->col = col;
-    this->row = row;
+  this->col = col;
+  this->row = row;
 }
 
 const int Point::getCol() const { return this->col; }

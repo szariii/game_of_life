@@ -147,6 +147,9 @@
     <ClInclude Include="RuleAbstract.h" />
     <ClInclude Include="TorusBoundary.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".clang-format" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

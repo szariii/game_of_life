@@ -53,6 +53,6 @@ const int Board::getCols() const {
 const int Board::getRows() const {
 	return this->rows;
 }
-const std::vector<int>& Board::getBoard() const {
+const std::vector<int> Board::getBoard() const {
 	return this->mainBoard;
 }

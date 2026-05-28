@@ -17,7 +17,7 @@ void Game::printBoard() {
 	b.printBoard();
 }
 
-const Board& Game::getBoard() const {
+const Board Game::getBoard() const {
 	return b;
 }
 

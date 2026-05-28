@@ -37,8 +37,6 @@ int main() {
 	while (inputValue != "finish") {
 		game.nextRound();
 		game.printBoard();
-		//updateBoard(mainBoard, tempBoard);
-		//printBoard(mainBoard);
 		cout << "\nWpisz dowolny ciag znakow aby grac dalej albo wpisz \"finish\" aby skonczyc gre";
 		cin >> inputValue;
 	}

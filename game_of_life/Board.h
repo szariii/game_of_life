@@ -21,6 +21,6 @@ public:
 	void setRows(int rows);
 	const int getCols() const;
 	const int getRows() const;
-	const std::vector<int> &getBoard() const;
+	const std::vector<int> getBoard() const;
 };
 

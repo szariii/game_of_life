@@ -14,7 +14,7 @@ class Game
 		void nextRound();
 		void printBoard();
 		
-		const Board& getBoard();
+		const Board& getBoard() const;
 
 };
 

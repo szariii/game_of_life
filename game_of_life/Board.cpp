@@ -47,12 +47,12 @@ void Board::setCols(int cols) {
 void Board::setRows(int rows) {
 	this->rows = rows;
 }
-const int Board::getCols() {
+const int Board::getCols() const {
 	return this->cols;
 }
-const int Board::getRows() {
+const int Board::getRows() const {
 	return this->rows;
 }
-const std::vector<int>& Board::getBoard() {
+const std::vector<int>& Board::getBoard() const {
 	return this->mainBoard;
 }

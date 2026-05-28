@@ -15,9 +15,7 @@ public:
 	Board(int cols, int rows, std::vector<Point>& points, std::shared_ptr<RuleAbstract> rule);
 	void generateBoard();
 	void setStartingPoints(std::vector<Point>& points);
-	//int countCellPosition(int colIndex, int rowindex);
 	void printBoard();
-	//bool isAlive(int colIndex,int rowIndex);
 	void setState(std::vector<int> tempBoard);
 	void setCols(int cols);
 	void setRows(int rows);

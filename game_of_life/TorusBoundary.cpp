@@ -1,7 +1,7 @@
 #include "TorusBoundary.h"
 
-bool TorusBoundary::adjustCoordinates(int& c, int& r, int cols, int rows) {   
- c = (c % cols + cols) % cols; // Zawijanie ekranu 
- r = (r % rows + rows) % rows;
+bool TorusBoundary::adjustCoordinates(int& currentCol, int& currentRow, int boardCols, int boardRows) {   
+	currentCol = (currentCol % boardCols + boardCols) % boardCols; // Zawijanie ekranu 
+	currentRow = (currentRow % boardRows + boardRows) % boardRows;
  return true; // Komórka zawsze ma s¹siada
 }

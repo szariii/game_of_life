@@ -3,5 +3,5 @@
 
 class HardBoundary : public BoundaryStrategy {
 public:
-    bool adjustCoordinates(int& c, int& r, int cols, int rows) override;
+    bool adjustCoordinates(int& currentCol, int& currentRow, int boardCols, int boardRows) override;
 };

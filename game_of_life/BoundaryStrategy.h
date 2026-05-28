@@ -2,6 +2,6 @@
 
 class BoundaryStrategy {
 public:
-	virtual bool adjustCoordinates(int& c, int& r, int cols, int rows) = 0;
+	virtual bool adjustCoordinates(int& currentCol, int& currentRow, int boardCols, int boardRows) = 0;
 	virtual ~BoundaryStrategy() = default;
 };

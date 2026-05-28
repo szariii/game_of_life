@@ -7,8 +7,8 @@ private:
 public:
     Point(int col, int row);
 
-    int getCol();
-    int getRow();
+    const int getCol();
+    const int getRow();
     void setCol(int col);
     void setRow(int row);
 };

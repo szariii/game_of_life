@@ -19,8 +19,8 @@ public:
 	void setState(std::vector<int> tempBoard);
 	void setCols(int cols);
 	void setRows(int rows);
-	int	getCols();
-	int getRows();
+	const int getCols();
+	const int getRows();
 	const std::vector<int> &getBoard();
 };
 

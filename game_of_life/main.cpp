@@ -24,22 +24,52 @@ Znalazłem takie zasady ale możesz dodać jakieś inne tylko napisz tutaj:
 żywa.
 */
 
-int main() {
-  vector<Point> startingPoints = {{1, 2}, {2, 3}, {3, 1}, {3, 2}, {3, 3}};
-  auto boundaryStrategy1 = std::make_shared<HardBoundary>();
-  auto boundaryStrategy2 = std::make_shared<TorusBoundary>();
-  auto boundaryStrategy3 = std::make_shared<ReflectiveBoundary>();
-  std::shared_ptr<Rule> rule = std::make_shared<Rule>(boundaryStrategy3);
-  Game game = Game(20, 20, startingPoints, rule);
-  game.printBoard();
-  string inputValue = "";
-  while (inputValue != "finish") {
-    game.nextRound();
-    game.printBoard();
-    cout << "\nWpisz dowolny ciag znakow aby grac dalej albo wpisz \"finish\" "
-            "aby skonczyc gre";
-    cin >> inputValue;
-  }
+int main()
+{
+    vector<Point> startingPoints = {{1, 2}, {2, 3}, {3, 1}, {3, 2}, {3, 3}};
+    auto choice = 0;
+    std::shared_ptr<BoundaryStrategy> boundaryStrategy = nullptr;
+    std::shared_ptr<Rule> rule = nullptr;
 
-  return 0;
+    while (choice < 1 || choice > 3)
+    {
+        cout << "Wybierz jak ma dzialac program przy granicach planszy: " << endl;
+        cout << "1: HardBoundary" << endl;
+        cout << "2: Torus" << endl;
+        cout << "3: Reflective" << endl;
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            boundaryStrategy = std::make_shared<HardBoundary>();
+            break;
+        case 2:
+            boundaryStrategy = std::make_shared<TorusBoundary>();
+            break;
+        case 3:
+            boundaryStrategy = std::make_shared<ReflectiveBoundary>();
+            break;
+        default:
+            cout << "Podano nieprawidlowa cyfre!" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
+            break;
+        }
+    }
+
+    rule = std::make_shared<Rule>(boundaryStrategy);
+    Game game = Game(20, 20, startingPoints, rule);
+    game.printBoard();
+    string inputValue = "";
+    while (inputValue != "finish")
+    {
+        game.nextRound();
+        game.printBoard();
+        cout << "\nWpisz dowolny ciag znakow aby grac dalej albo wpisz \"finish\" "
+                "aby skonczyc gre";
+        cin >> inputValue;
+    }
+
+    return 0;
 }

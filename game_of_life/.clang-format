@@ -2,24 +2,23 @@
 # Bazujemy na oficjalnym, czystym standardzie LLVM/Microsoft
 BasedOnStyle: Microsoft
 
-# Ujednolicenie wciêæ (Rozmiar tabulacji i wciêcia na 4 spacje)
+# Ujednolicenie wciec (Rozmiar tabulacji i wciecia na 4 spacje)
 TabWidth: 4
 IndentWidth: 4
-UseTab: Never # Zamienia tabulatory na spacje (bardzo polecane dla spójnoœci)
+UseTab: Never # Zamienia tabulatory na spacje (bardzo polecane dla spojnosci)
 
-# Konstrukcje: Gdzie maj¹ byæ klamry {}
-# Allman oznacza, ¿e klamry dla klas, funkcji i "if-ów" zawsze l¹duj¹ w nowej linii
+# Konstrukcje: Gdzie maja byc klamry {}
+# Allman oznacza, ze klamry dla klas, funkcji i "if-ow" zawsze laduja w nowej linii
 BreakBeforeBraces: Allman
 
-# Konstrukcje: Spacje wokó³ operatorów i nawiasów
+# Konstrukcje: Spacje wokol operatorow i nawiasow
 SpaceBeforeAssignmentOperators: true
 SpaceBeforeParens: ControlStatements # spacja po 'if', 'while', 'switch'
 SpaceInEmptyParentheses: false
 SpacesInAngles: false # brak spacji w <vector>
 
-# Konstrukcje: Automatyczne wyrównywanie gwiazdek/referencji przy typach
+# Konstrukcje: Automatyczne wyrownywanie gwiazdek/referencji przy typach
 PointerAlignment: Left # Zapisuje jako 'const Board& board' a nie 'Board &board'
 
-# Maksymalna d³ugoœæ linii kodu zanim formater sam j¹ zawinie
+# Maksymalna dlugosc linii kodu zanim formater sam ja zawinie
 ColumnLimit: 100
-...
